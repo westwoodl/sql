@@ -1,7 +1,7 @@
 /*
 
 在排序时使用索引
-
+order by:
 MySQL支持两种方式的排序：1.Index 2. file sort。 index效率高，它指MySQL扫描索引本身完成排序。filesort效率较低
 所以在extra中避免出现file sort
 
@@ -29,4 +29,9 @@ MySQL支持两种方式的排序：1.Index 2. file sort。 index效率高，它�
 		order by a,d
 		where a in (...) order by b,c
 
+group by:
+	和order by差不多
+	1. group by 实质是先排序后进行分组，遵照索引建的最佳左前缀
+	2.当无法使用索引列，增大max_lengh_for_sort_data的参数设置+增大sort_buffer_size参数的设置
+	3.where高于having，能写where限定的条件就不要写having限定
 */
