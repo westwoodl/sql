@@ -1,5 +1,5 @@
 /*
- sql分析
+ sql分析，explain下的字段解释haha
  1.id为优先级(越大越高)，相同优先级按顺序执行
  2.select_type:
     Derive衍生查询：在FROM列表中包含的子查询被标记为 DERIVED(行生)MYSQL会递归执行这些子查询,把结果放在临时表里。
@@ -55,3 +55,8 @@ CREATE TABLE IF NOT EXISTS article (
     
     INSERT INTO article ( author_id , category_id , views , comments , title , content ) 
     VALUES(1,1,1,1,'1','1'),(2,2,2,2,'2','2'),(1,1,3,3,'3','3');
+
+
+    /*
+复合索引的最左原则
+    */
